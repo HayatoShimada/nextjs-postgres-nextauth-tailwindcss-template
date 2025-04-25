@@ -1,4 +1,8 @@
-export default {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  env: {
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+  },
   images: {
     remotePatterns: [
       {
@@ -10,7 +14,14 @@ export default {
         protocol: 'https',
         hostname: '*.public.blob.vercel-storage.com',
         search: ''
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        search: ''
       }
     ]
   }
 };
+
+export default nextConfig;
